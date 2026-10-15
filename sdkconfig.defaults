@@ -1,0 +1,3 @@
+CONFIG_IDF_TARGET="esp32"
+# Chương trình tự in báo cáo; log hệ thống mức INFO chỉ làm rối màn hình
+CONFIG_LOG_DEFAULT_LEVEL_WARN=y
