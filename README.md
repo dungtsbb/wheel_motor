@@ -94,6 +94,22 @@ hơn (DRV8871, BTS7960) — phần code điều khiển giữ nguyên, chỉ đ�
 
 ## 3. Sơ đồ nối dây
 
+![Đầu nối 5 dây của cụm bánh: xanh dương GND, xanh lá 5V, vàng Output encoder, đen M−, đỏ M+](docs/wiring.jpg)
+
+Cụm bánh ra một đầu nối 5 dây:
+
+| Dây | Chức năng | Nối vào |
+|---|---|---|
+| Đỏ | M+ | AO1 của TB6612FNG |
+| Đen | M− | AO2 của TB6612FNG |
+| Xanh lá | 5V nguồn encoder | 5V |
+| Vàng | Output — tín hiệu encoder | GPIO 18, **qua cầu phân áp** (mục 3.2) |
+| Xanh dương | GND encoder | GND chung |
+
+Encoder cấp 5V nên tín hiệu Output cũng ở mức 5V — bắt buộc qua cầu phân áp
+10 kΩ / 20 kΩ trước khi vào GPIO của ESP32.
+
+
 ### 3.1 ESP32 ↔ TB6612FNG
 
 | TB6612FNG | ESP32 | Chức năng |
